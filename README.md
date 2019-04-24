@@ -15,9 +15,14 @@ Each file's module type depends on the closest parent's package.json.
 └── type.js              # ↑
 ```
 
+```javascript
+console.log(`name: type.js module-type: ${typeof module !== 'undefined' ? 'cjs' : 'esm'}`);
+```
+
 ```console
 $ node --experimental-modules type.js
-esm/esm.js esm
-esm/cjs/cjs.js cjs
-esm/cjs/cjs/cjs.js cjs
+name: esm/esm.js          module-type: esm
+name: esm/cjs/cjs.js      module-type: cjs
+name: esm/cjs/cjs/cjs.js  module-type: cjs
+name: type.js             module-type: esm
 ```

@@ -1,1 +1,1 @@
-console.log('esm/cjs/cjs.js', typeof module !== 'undefined' ? 'cjs' : 'esm');
+console.log(`name: esm/cjs/cjs.js module-type: ${typeof module !== 'undefined' ? 'cjs' : 'esm'}`);
